@@ -19,5 +19,4 @@ public class PmsSeckill implements Serializable {
     public Date seckillTime;//
     public Integer seckillNum;//
     public BigDecimal seckillPrice;//
-    public Date seckillEndTime;
 }
