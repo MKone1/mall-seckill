@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mkone.ommonservice.dao.PmsSeckillDao">
+    <resultMap id="seckillMap" type="com.mkone.ommonservice.entity.PmsSeckill">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="seckill_num" jdbcType="BIGINT" property="seckillNum"/>
+        <result column="seckill_price" jdbcType="DECIMAL" property="seckillPrice"/>
+        <result column="seckill_pro_id" jdbcType="BIGINT" property="seckillProId" />
+        <result column="seckill_time" jdbcType="DATA" property="seckillTime"/>
+    </resultMap>
+</mapper>

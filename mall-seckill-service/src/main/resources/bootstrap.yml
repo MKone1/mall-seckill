@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mall-seckill-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.100:8848
+      config:
+        server-addr: 192.168.0.100:8848
