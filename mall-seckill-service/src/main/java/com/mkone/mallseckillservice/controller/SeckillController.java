@@ -22,4 +22,6 @@ public class SeckillController {
         return R.ok("success").setData(list);
     }
 
+
+
 }

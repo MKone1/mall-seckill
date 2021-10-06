@@ -2,10 +2,8 @@ package com.mkone.commodityservice.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.mkone.commodityservice.service.CommondityService;
-import com.mkone.ommonservice.constant.SeckillConstant;
 import com.mkone.ommonservice.entity.PmsProduct;
 import com.mkone.ommonservice.entity.PmsSeckill;
-import com.mkone.commodityservice.fegin.SeckillFeginService;
 import com.mkone.ommonservice.util.R;
 import com.mkone.ommonservice.util.TimeUtil;
 import org.slf4j.Logger;
@@ -28,8 +26,6 @@ public class CommodityController {
     private static Logger logger = LoggerFactory.getLogger(CommodityController.class);
     @Autowired
     CommondityService commondityService;
-    @Resource
-    SeckillFeginService seckillFeginService;
     @Autowired
     RedisTemplate redisTemplate;
 
@@ -41,28 +37,10 @@ public class CommodityController {
     }
 
     @RequestMapping("/info")
-    public R info(@RequestBody PmsProduct product) {
-        product = commondityService.getById(product.getId());
+    public R info(@RequestBody Integer productId) {
+       PmsProduct product = commondityService.getById(productId);
         return R.ok("success").setData(product);
     }
 
-    @RequestMapping("/getSeckill")
-    public R getSeckill() {
-        R list = seckillFeginService.list();
-        if (list.getCode() == 0) {
-            TypeReference<List<PmsSeckill>> listTypeReference = new TypeReference<List<PmsSeckill>>() {
-            };
-            List<PmsSeckill> collect = list.getData(listTypeReference).stream().collect(Collectors.toList());
-            for (PmsSeckill pmsSeckill : collect) {
-                if (TimeUtil.compareTwoDate(TimeUtil.addDays(pmsSeckill.getSeckillTime(),1), new Date()) == 0) {
-                    //提前一天将商品加入缓存
-                    redisTemplate.opsForHash().put("seckill:session",pmsSeckill.getSeckillEndTime(),pmsSeckill.getSeckillProId());
-                }
-            }
 
-        } else {
-            return R.error("没有秒杀商品");
-        }
-        return R.ok("success").setData(list);
-    }
 }
