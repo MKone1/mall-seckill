@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,8 +37,9 @@ public class CommodityController {
         return R.ok("success").setData(list);
     }
 
-    @RequestMapping("/info")
-    public R info(@RequestBody Integer productId) {
+    @RequestMapping("/info/{productId}")
+    public R info(@PathVariable("productId") Long productId) {
+        logger.info("查询的ID"+productId);
        PmsProduct product = commondityService.getById(productId);
         return R.ok("success").setData(product);
     }

@@ -17,9 +17,11 @@ public class SeckillController {
     SeckillService seckillService;
     @RequestMapping("/list")
     public R list(){
-        List<PmsSeckill> list =
-                seckillService.list();
-        return R.ok("success").setData(list);
+//        List<PmsSeckill> list =
+//                seckillService.list();
+
+        R seckillProduct = seckillService.getSeckillProduct();
+        return R.ok("success").setData(seckillProduct);
     }
 
 

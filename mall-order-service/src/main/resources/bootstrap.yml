@@ -1,6 +1,6 @@
 spring:
   application:
-    name: mall-commodity-service
+    name: mall-order-service
   cloud:
     nacos:
       discovery:

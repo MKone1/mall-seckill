@@ -14,10 +14,10 @@ import java.util.Date;
 @NoArgsConstructor
 public class PmsSeckill implements Serializable {
     @TableId
-    public Integer id;//
-    public Integer seckillProId;//
-    public Date seckillTime;//
-    public Integer seckillNum;//
-    public BigDecimal seckillPrice;//
-    public Date seckillEndTime;
+    public Integer id;//id
+    public Integer seckillProId;//秒杀商品ID
+    public Date seckillTime;//秒杀开始时间
+    public Integer seckillNum;//秒杀数量
+    public BigDecimal seckillPrice;//秒杀价格
+    public Date seckillEndTime;//秒杀结束时间
 }

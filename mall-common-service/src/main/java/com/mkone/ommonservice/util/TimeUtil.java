@@ -6,10 +6,8 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
@@ -1857,6 +1855,22 @@ public class TimeUtil {
             }
             return n;
         }
+
+    //当前天数的 00:00:00
+    public static String getStartTime() {
+        LocalDate now = LocalDate.now();
+        LocalDateTime time = now.atTime(LocalTime.MIN);
+        String format = time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        return format;
+    }
+
+    //当前天数+2 23:59:59..
+    public static String getEndTime() {
+        LocalDate now = LocalDate.now();
+        LocalDateTime time = now.plusDays(2).atTime(LocalTime.MAX);
+        String format = time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        return format;
+    }
 
         
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mkone.ommonservice.dao.WmsWareSkuDao">
+    <resultMap id="wareSku" type="com.mkone.ommonservice.entity.WmsWareSku">
+        <id column="id" jdbcType="BIGINT" property="id"></id>
+        <result column="sku_id" jdbcType="BIGINT" property="skuId"/>
+        <result column="ware_id" jdbcType="BIGINT" property="wareId"/>
+        <result column="stock" jdbcType="INT" property="stock"/>
+        <result column="sku_name" jdbcType="VARCHAR" property="skuName"/>
+        <result column="stock_locked" jdbcType="INT" property="stockLocked"/>
+    </resultMap>
+</mapper>

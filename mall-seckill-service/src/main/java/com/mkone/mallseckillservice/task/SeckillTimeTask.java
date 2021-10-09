@@ -38,7 +38,7 @@ public class SeckillTimeTask {
     public void seckillTask() {
         List<PmsSeckill> list = seckillService.list();
         if (list.size()!=0||list!=null) {
-          List<PmsSeckill> seckillList =   seckillService.getSeckillProduct();
+          R seckillList =   seckillService.getSeckillProduct();
 
         }
     }

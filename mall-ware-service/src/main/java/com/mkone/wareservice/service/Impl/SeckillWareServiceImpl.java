@@ -14,4 +14,9 @@ public class SeckillWareServiceImpl extends ServiceImpl<WmsWareSkuDao, WmsWareSk
     public Boolean orderStockLock(SeckillWarelLockdVo vo) {
         return null;
     }
+
+    @Override
+    public WmsWareSku getWare(Long skuId) {
+        return null;
+    }
 }

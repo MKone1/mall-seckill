@@ -1,11 +1,30 @@
 spring:
+  cloud:
     gateway:
       routes:
-        - id: test_routes
-          uri: https://www.baidu.com
+        - id: query_route
+          uri: https://www.baidu.com/
           predicates:
-            - Query=baidu
+          - Path=/baidu/**
+#        测试用例
+        - id: product_route
+          uri: lb://mall-commodity-service
+          predicates:
+          - Path=/api/profuct/**
+          filters:
+#          - RewritePath=/api/product/(?<segment>/?.*), /$\{segment}
+            - StripPrefix=1
 
+        - id: seckill-route
+          uri: lb://mall-seckill-service
+          predicates:
+          - Path=/api/seckill/**
+#          filters:
+#            RewritePath:重写原始的请求路径
+#          - RewritePath=/seckill/(?<segment>/?.*), /$\{segment}
+          filters:
+#            - StripPrefix 用于截断原始请求的路径
+            - StripPrefix=1
 
 
 
