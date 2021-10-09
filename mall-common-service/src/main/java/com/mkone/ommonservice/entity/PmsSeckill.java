@@ -20,4 +20,5 @@ public class PmsSeckill implements Serializable {
     public Integer seckillNum;//秒杀数量
     public BigDecimal seckillPrice;//秒杀价格
     public Date seckillEndTime;//秒杀结束时间
+    public String seckillActivitId;//秒杀活动ID
 }

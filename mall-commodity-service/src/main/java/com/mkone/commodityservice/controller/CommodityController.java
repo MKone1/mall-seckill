@@ -6,6 +6,7 @@ import com.mkone.ommonservice.entity.PmsProduct;
 import com.mkone.ommonservice.entity.PmsSeckill;
 import com.mkone.ommonservice.util.R;
 import com.mkone.ommonservice.util.TimeUtil;
+import com.mkone.ommonservice.vo.SeckillProductHomeVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -44,5 +45,14 @@ public class CommodityController {
         return R.ok("success").setData(product);
     }
 
+    /**
+     * 首页中秒杀预约展示
+     * @return
+     */
+    @RequestMapping("/get/seckill")
+    public R getSeckillInfo(){
+      List<SeckillProductHomeVo> seckillProductHomeVoList =  commondityService.getSeckill();
+      return null;
+    }
 
 }

@@ -39,6 +39,7 @@ public class SeckillWareController {
     @RequestMapping("/getWare/{skuId}")
     public R getWare(@PathVariable("skuId") Long skuId) {
        WmsWareSku wmsWareSku = seckillWareService.getWare(skuId);
+       return null;
     }
 
 }

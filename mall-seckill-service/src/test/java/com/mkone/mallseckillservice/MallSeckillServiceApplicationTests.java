@@ -8,11 +8,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+
 @Slf4j
 @SpringBootTest
 class MallSeckillServiceApplicationTests {
     @Autowired
     ProductFeginService productFeginService;
+    @Autowired
+    RedisTemplate redisTemplate;
     @Test
     void contextLoads() {
         R info = productFeginService.info(29L);
@@ -22,5 +26,11 @@ class MallSeckillServiceApplicationTests {
            log.info(String.valueOf(data));
         }
     }
+    @Test
+    void testRedis(){
+        redisTemplate.opsForValue().set("ahsdjhgsad","aksdkahsdk");
+
+    }
+
 
 }

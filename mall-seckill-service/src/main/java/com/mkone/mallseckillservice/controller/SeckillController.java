@@ -15,13 +15,13 @@ import java.util.List;
 public class SeckillController {
     @Autowired
     SeckillService seckillService;
+
     @RequestMapping("/list")
     public R list(){
-//        List<PmsSeckill> list =
-//                seckillService.list();
-
+        List<PmsSeckill> list =
+                seckillService.list();
         R seckillProduct = seckillService.getSeckillProduct();
-        return R.ok("success").setData(seckillProduct);
+        return R.ok("success").setData(list);
     }
 
 
