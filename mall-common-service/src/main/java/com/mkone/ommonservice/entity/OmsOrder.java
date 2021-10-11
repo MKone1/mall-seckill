@@ -13,6 +13,7 @@ import java.util.Date ;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OmsOrder implements Serializable {
+    private static final long serialVersionUID = 1L;
     @TableId
     public Long id ;  //订单id
     public Long member_id ;  //用户id

@@ -2,7 +2,9 @@ package com.mkone.commodityservice.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.mkone.ommonservice.entity.PmsProduct;
+import com.mkone.ommonservice.vo.SeckillProductActivityVo;
 import com.mkone.ommonservice.vo.SeckillProductHomeVo;
+import com.mkone.ommonservice.vo.SekillTimeVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,4 +16,11 @@ public interface CommondityService extends IService<PmsProduct> {
      * @return
      */
     List<SeckillProductHomeVo> getSeckill();
+
+    /**
+     * 秒杀活动查询
+     * @param seckillTimeVo
+     * @return
+     */
+    List<SeckillProductActivityVo> getSeckillActivityInfo(SekillTimeVo seckillTimeVo);
 }

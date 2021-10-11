@@ -7,5 +7,6 @@
         <result column="seckill_price" jdbcType="DECIMAL" property="seckillPrice"/>
         <result column="seckill_pro_id" jdbcType="BIGINT" property="seckillProId" />
         <result column="seckill_time" jdbcType="DATA" property="seckillTime"/>
+        <result column="seckill_end_time" jdbcType="DATA" property="seckillEndTime"/>
     </resultMap>
 </mapper>

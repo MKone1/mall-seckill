@@ -13,6 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PmsSeckill implements Serializable {
+    private static final long serialVersionUID = 1L;
     @TableId
     public Integer id;//id
     public Integer seckillProId;//秒杀商品ID
@@ -20,5 +21,5 @@ public class PmsSeckill implements Serializable {
     public Integer seckillNum;//秒杀数量
     public BigDecimal seckillPrice;//秒杀价格
     public Date seckillEndTime;//秒杀结束时间
-    public String seckillActivitId;//秒杀活动ID
+    public Long seckillActivitId;//秒杀活动ID
 }

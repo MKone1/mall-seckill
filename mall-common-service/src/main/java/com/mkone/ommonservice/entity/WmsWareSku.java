@@ -10,6 +10,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WmsWareSku implements Serializable {
+    private static final long serialVersionUID = 1L;
     public  Long  id;//id
     public  Long  skuId;//sku_id
     public  Long  wareId;//仓库id

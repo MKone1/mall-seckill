@@ -10,7 +10,7 @@ spring:
         - id: product_route
           uri: lb://mall-commodity-service
           predicates:
-          - Path=/api/profuct/**
+          - Path=/api/product/**
           filters:
 #          - RewritePath=/api/product/(?<segment>/?.*), /$\{segment}
             - StripPrefix=1

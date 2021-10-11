@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mkone.ommonservice.dao.PmsSeckillActivitDao">
+    <resultMap id="seckillActivit" type="com.mkone.ommonservice.entity.PmsSeckillActivit">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="seckill_activit_id" jdbcType="STRING" property="seckillActivitId"/>
+        <result column="seckill_time" jdbcType="DATA" property="seckillTime"/>
+        <result column="seckill_end_time" jdbcType="DATA" property="seckillEndTime"/>
+    </resultMap>
+</mapper>

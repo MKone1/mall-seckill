@@ -12,6 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PmsProduct implements Serializable {
+    private static final long serialVersionUID = 1L;
     @TableId
     public Long id;//
     public Long brandId;//
