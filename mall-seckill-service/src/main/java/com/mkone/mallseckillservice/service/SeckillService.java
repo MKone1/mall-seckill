@@ -22,4 +22,11 @@ public interface SeckillService extends IService<PmsSeckill> {
      * @param activitVo
      */
     R addActivity(PmsSeckill activitVo);
+
+    /**
+     * 查询某个商品是否参与秒杀
+     * @param skuId
+     * @return
+     */
+    R getSeckillSkuInfo(Long skuId);
 }

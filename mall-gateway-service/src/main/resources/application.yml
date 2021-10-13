@@ -26,5 +26,11 @@ spring:
 #            - StripPrefix 用于截断原始请求的路径
             - StripPrefix=1
 
+        - id: auth-route
+          uri: lb://mall-auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StriPrefix=1
 
 

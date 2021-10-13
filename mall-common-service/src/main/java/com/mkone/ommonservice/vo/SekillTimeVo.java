@@ -11,5 +11,5 @@ import java.util.Date;
 @Data
 public class SekillTimeVo {
     private Long times;//当前时间毫秒数
-    private Integer ActivityId;//活动ID
+    private Long ActivityId;//活动ID
 }

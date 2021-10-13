@@ -67,11 +67,8 @@ public class CommodityController {
      */
     @RequestMapping("/get/seckill")
     public R getSeckillInfo() {
-        List<SeckillProductHomeVo> seckillProductHomeVoList = commondityService.getSeckill();
-        if (seckillProductHomeVoList == null) {
-            return R.error("没有商品");
-        }
-        return R.ok().setData(seckillProductHomeVoList);
+       R r = commondityService.getSeckill();
+        return r;
     }
 
     /**
@@ -82,8 +79,9 @@ public class CommodityController {
      */
     @RequestMapping("/get/specified_time")
     public R getSpecifiedTime(@RequestBody SekillTimeVo seckillTimeVo) {
-        List<SeckillProductActivityVo> productActivityVos = commondityService.getSeckillActivityInfo(seckillTimeVo);
-        return R.ok("success").setData(productActivityVos);
+        R r = commondityService.getSeckillActivityInfo(seckillTimeVo);
+        return r;
     }
+
 
 }

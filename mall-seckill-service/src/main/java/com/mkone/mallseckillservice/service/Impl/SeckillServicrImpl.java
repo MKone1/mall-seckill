@@ -71,6 +71,13 @@ public class SeckillServicrImpl extends ServiceImpl<PmsSeckillDao, PmsSeckill> i
         return R.error("fail");
     }
 
+    @Override
+    public R getSeckillSkuInfo(Long skuId) {
+
+
+    return null;
+    }
+
     private void accept(PmsSeckill item) {
         QueryWrapper<PmsSeckill> eq = new QueryWrapper<PmsSeckill>().eq("seckill_time", item.getSeckillTime()).eq("seckill_end_time", item.getSeckillEndTime());
         List<PmsSeckill> list = this.list(eq);

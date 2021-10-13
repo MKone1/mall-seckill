@@ -8,5 +8,6 @@ import java.math.BigDecimal;
 public class SeckillProductActivityVo extends SeckillProductHomeVo{
 
     private String description;
+    private String token;
 
 }
